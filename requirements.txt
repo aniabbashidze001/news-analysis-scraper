@@ -1,0 +1,9 @@
+beautifulsoup4
+selenium
+scrapy
+pandas
+numpy
+matplotlib
+pyyaml
+requests
+schedule

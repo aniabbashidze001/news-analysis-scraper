@@ -1,0 +1,11 @@
+database:
+  path: "news.db"
+
+scrapers:
+  enable_static: true
+  enable_dynamic: true
+  enable_scrapy: true
+
+logging:
+  level: "INFO"
+  file: "project.log"
