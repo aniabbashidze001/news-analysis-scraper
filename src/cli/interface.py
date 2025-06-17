@@ -23,8 +23,8 @@ def run_cli():
 
     if args.run_dynamic:
         logger.info("Running dynamic scrapers...")
-        # from src.scrapers.selenium_scraper import run_dynamic_scrapers
-        # run_dynamic_scrapers()
+        from src.scrapers.selenium_scraper import run_dynamic_scrapers
+        run_dynamic_scrapers()
 
     if args.run_scrapy:
         logger.info("Running Scrapy crawler...")
