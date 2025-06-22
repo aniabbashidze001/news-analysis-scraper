@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>News Summary Report</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { padding: 2rem; background-color: #f9f9f9; font-family: 'Segoe UI', sans-serif; }
+    h1, h2, h3 { margin-top: 2rem; }
+    .section { margin-bottom: 2rem; }
+    .card { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    table td, table th { vertical-align: middle; }
+    img { max-width: 100%; height: auto; border-radius: 4px; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center mb-4">📰 News Summary Report</h1>
+
+    <div class="section card p-4">
+      <h3>Total Articles</h3>
+      <p><strong>{{ total_articles }}</strong></p>
+    </div>
+
+    <div class="section card p-4">
+      <h3>📅 Top 5 Dates by Article Count</h3>
+      <table class="table table-striped">
+        <thead><tr><th>Date</th><th>Count</th></tr></thead>
+        <tbody>
+          {% for date, count in top_dates.items() %}
+            <tr><td>{{ date }}</td><td>{{ count }}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section card p-4">
+      <h3>🗂️ Article Categories</h3>
+      <table class="table table-hover">
+        <thead><tr><th>Category</th><th>Count</th></tr></thead>
+        <tbody>
+          {% for cat, count in categories.items() %}
+            <tr><td>{{ cat }}</td><td>{{ count }}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section card p-4">
+      <h3>📊 Charts</h3>
+      <h5>Articles by Category</h5>
+      <img src="articles_by_category.png" alt="Articles by Category Chart">
+      <h5 class="mt-4">Publishing Trend (Smoothed)</h5>
+      <img src="publishing_trend.png" alt="Publishing Trend Chart">
+    </div>
+  </div>
+</body>
+</html>
