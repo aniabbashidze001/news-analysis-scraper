@@ -9,3 +9,8 @@ scrapers:
 logging:
   level: "INFO"
   file: "project.log"
+  console: false
+
+scraper_settings:
+  throttle_min: 1
+  throttle_max: 3

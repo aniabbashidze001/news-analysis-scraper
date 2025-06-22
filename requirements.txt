@@ -7,3 +7,7 @@ matplotlib
 pyyaml
 requests
 schedule
+jinja2
+pytest
+openpyxl
+python-dateutil
