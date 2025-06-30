@@ -19,9 +19,10 @@ This document outlines the individual contributions of each team member to the N
   - Visualizations using `matplotlib` (trend lines, category distribution)
 - Logging & Config Management
   - Built logger module with console/file support and YAML-based config
+- Testing Suite
+  - Tested and committed `tests/unit/test_processors.py`
 - Documentation
-  - Wrote Technical Architecture (`docs/architecture.md`)
-  - Wrote User Guide (`docs/user_guide.md`)
+  - Wrote README.md
 - GitHub Setup
   - Initial repo setup
 
@@ -43,7 +44,8 @@ This document outlines the individual contributions of each team member to the N
   - Developed `tests/unit/test_processors.py` with pytest
   - Created integration test for CLI execution
 - Documentation
-  - Wrote API Reference (`docs/api_reference.md`)
+  - Wrote Technical Architecture (`docs/architecture.md`)
+  - Wrote User Guide (`docs/user_guide.md`)
 
 ---
 
