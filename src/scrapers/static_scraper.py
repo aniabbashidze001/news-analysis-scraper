@@ -32,9 +32,18 @@ def parse_article(article, min_delay, max_delay):
     """Parse a single <article> element from NPR and extract metadata (title, link, date)."""
     try:
         throttle_requests(min_delay, max_delay)
+
         title_tag = article.select_one("h2.title a")
+        if not title_tag:
+            logger.debug("⚠️ Skipping article — missing title link")
+            return None
+
         title = title_tag.text.strip()
-        link = title_tag["href"]
+        link = title_tag.get("href", "").strip()
+        if not link:
+            logger.debug("⚠️ Skipping article — missing href")
+            return None
+
         date_tag = article.select_one("time")
         published = date_tag["datetime"] if date_tag else "N/A"
 
@@ -46,6 +55,7 @@ def parse_article(article, min_delay, max_delay):
             "category": "news",
             "published": published,
         }
+
     except Exception as e:
         logger.warning(f"⚠️ Skipping article due to error: {e}")
         return None
